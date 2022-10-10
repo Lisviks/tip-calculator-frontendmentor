@@ -47,3 +47,11 @@ customTipPercent.addEventListener('input', () => {
     tipPercentBtns.forEach(btn => btn.classList.remove('active'))
 })
 
+numberOfPeople.addEventListener('input', () => {
+    if (+numberOfPeople.value < 1 || numberOfPeople.value === '') {
+        peoplenumber = 1
+        return
+    }
+    peopleNumber = +numberOfPeople.value
+})
+
