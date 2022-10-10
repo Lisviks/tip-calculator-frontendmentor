@@ -97,6 +97,11 @@ input[type=number] {
     background-color: #f3f9fa;
 }
 
+.tip-percent button.active {
+    color: #00474b;
+    background-color: #26c2ae;
+}
+
 .results {
     margin-top: 3.2rem;
     padding: 3.7rem 2.3rem 2.4rem;
@@ -143,6 +148,10 @@ input[type=number] {
     border: none;
     border-radius: 5px;
     margin-top: 3.2rem;
+}
+
+.results .btn.disabled {
+    background-color: #0d686d;
 }
 
 @media(min-width: 920px) {
