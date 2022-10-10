@@ -20,6 +20,8 @@ billAmount.addEventListener('input', () => {
     const tip = calculateTip(bill, tipValue)
     tipPerson = tip / peopleNumber
     totalPerson = (bill / peopleNumber) + tipPerson
+    console.log('tip:', tipPerson)
+    console.log('total:', totalPerson)
 })
 
 tipPercentBtns.forEach(btn => {
@@ -33,5 +35,15 @@ tipPercentBtns.forEach(btn => {
             }
         })
     })
+})
+
+customTipPercent.addEventListener('input', () => {
+    if (customTipPercent.value === '') {
+        tipValue = 0
+        return
+    }
+
+    tipValue = +customTipPercent.value
+    tipPercentBtns.forEach(btn => btn.classList.remove('active'))
 })
 
