@@ -3,6 +3,8 @@ const tipPercentBtns = document.querySelectorAll('.tip-percent button')
 const customTipPercent = document.querySelector('#custom-tip')
 const numberOfPeople = document.querySelector('#people-num')
 const resetBtn = document.querySelector('.reset-btn')
+const tipTotalElement = document.querySelector('.tip-total')
+const personTotalElement = document.querySelector('.person-total')
 
 let peopleNumber = 1
 let tipValue = 0
@@ -25,15 +27,22 @@ const calculateTotals = () => {
     totalPerson = calculatePersonTotal()
 }
 
+const displayTotals = () => {
+    tipTotalElement.innerText = `$${tipPerson.toFixed(2)}`
+    personTotalElement.innerText = `$${totalPerson.toFixed(2)}`
+}
+
 billAmount.addEventListener('input', () => {
     bill = +billAmount.value
     calculateTotals()
+    displayTotals()
 })
 
 tipPercentBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         tipValue = +btn.value
         calculateTotals()
+        displayTotals()
         tipPercentBtns.forEach(button => {
             if (+button.value === tipValue) {
                 button.classList.add('active')
@@ -48,11 +57,13 @@ customTipPercent.addEventListener('input', () => {
     if (customTipPercent.value === '') {
         tipValue = 0
         calculateTotals()
+        displayTotals()
         return
     }
 
     tipValue = +customTipPercent.value
     calculateTotals()
+    displayTotals()
     tipPercentBtns.forEach(btn => btn.classList.remove('active'))
 })
 
@@ -63,5 +74,6 @@ numberOfPeople.addEventListener('input', () => {
     }
     peopleNumber = +numberOfPeople.value
     calculateTotals()
+    displayTotals()
 })
 
