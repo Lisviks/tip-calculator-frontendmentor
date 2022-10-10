@@ -32,10 +32,19 @@ const displayTotals = () => {
     personTotalElement.innerText = `$${totalPerson.toFixed(2)}`
 }
 
+const toggleResetBtn = () => {
+    if (bill > 0) {
+        resetBtn.classList.remove('disabled')
+    } else {
+        resetBtn.classList.add('disabled')
+    }
+}
+
 billAmount.addEventListener('input', () => {
     bill = +billAmount.value
     calculateTotals()
     displayTotals()
+    toggleResetBtn()
 })
 
 tipPercentBtns.forEach(btn => {
@@ -77,3 +86,21 @@ numberOfPeople.addEventListener('input', () => {
     displayTotals()
 })
 
+resetBtn.addEventListener('click', () => {
+    if (resetBtn.classList.contains('disabled')) return
+
+    bill = 0
+    tipValue = 0
+    peoplenumber = 0
+    tipPerson = 0
+    totalPerson = 0
+
+    tipPercentBtns.forEach(btn => btn.classList.remove('active'))
+    resetBtn.classList.add('disabled')
+
+    billAmount.value = ''
+    customTipPercent.value = ''
+    numberOfPeople.value = ''
+
+    displayTotals()
+})
