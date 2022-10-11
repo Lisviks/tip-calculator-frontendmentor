@@ -77,6 +77,13 @@ customTipPercent.addEventListener('input', () => {
 })
 
 numberOfPeople.addEventListener('input', () => {
+    if (+numberOfPeople.value === 0) {
+        numberOfPeople.parentElement.classList.add('error')
+        return
+    } else {
+        numberOfPeople.parentElement.classList.remove('error')
+    }
+
     if (+numberOfPeople.value < 1 || numberOfPeople.value === '') {
         peoplenumber = 1
         return

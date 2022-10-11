@@ -32,10 +32,28 @@ header {
     position: relative;
 }
 
+.input-field .error-msg {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #e17457;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+.input-field.error .error-msg {
+    display: block;
+}
+
 .input-field label, .tip-percent p {
     font-size: 1.6rem;
     line-height: 2.4rem;
     color: #5e7a7d;
+}
+
+.input-field.error input {
+    border: 2px solid #e17052;
 }
 
 .input-field input {
