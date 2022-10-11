@@ -64,7 +64,7 @@ header {
     text-align: right;
     color: #00474b;
     background-color: #f3f9fa;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 5px;
     padding: 0.6rem 1.7rem;
     width: 100%;
@@ -113,6 +113,8 @@ input[type=number] {
     text-align: right;
     color: #00474b;
     background-color: #f3f9fa;
+    border: 2px solid transparent;
+    padding: 0 1.6rem;
 }
 
 .tip-percent button.active {
@@ -183,7 +185,7 @@ button.disabled:hover {
 }
 
 input:focus {
-    border: 2px solid #26c2ae;
+    border-color: #26c2ae;
     outline: none;
 }
 
