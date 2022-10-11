@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [URL]()
+- Solution URL: [URL](https://www.frontendmentor.io/solutions/tip-calculator-mp4nKaeCjw)
 - Live Site URL: [URL](https://lisviks.github.io/tip-calculator-frontendmentor/)
 
 ## My process
