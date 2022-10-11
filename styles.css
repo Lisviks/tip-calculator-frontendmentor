@@ -172,6 +172,25 @@ input[type=number] {
     background-color: #0d686d;
 }
 
+/* HOVER/ACTIVE */
+
+button:hover, input:hover {
+    cursor: pointer;
+}
+
+button.disabled:hover {
+    cursor: unset;
+}
+
+input:focus {
+    border: 2px solid #26c2ae;
+    outline: none;
+}
+
+button:hover {
+    background-color: #9fe8df;
+}
+
 @media(min-width: 920px) {
    header {
        margin: 16.3rem auto 8.786rem;
